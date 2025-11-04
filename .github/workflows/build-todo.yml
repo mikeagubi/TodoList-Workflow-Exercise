@@ -1,6 +1,8 @@
 name: Todo Build Workflow
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - '**/*.cs'
 
 jobs:
   Print-Info:
