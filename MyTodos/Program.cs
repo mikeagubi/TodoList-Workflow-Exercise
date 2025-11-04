@@ -1,10 +1,15 @@
-namespace TodoList.App
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MyTodos.Data;
+namespace MyTodos
 {
     public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<MyTodosContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MyTodosContext") ?? throw new InvalidOperationException("Connection string 'MyTodosContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddRazorPages();
