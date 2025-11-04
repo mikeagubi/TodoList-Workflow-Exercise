@@ -1,0 +1,16 @@
+name: Todo Build Workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  Print-Info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔔 Start workflow
+        run: echo "Workflow started..."
+
+      - name: 📃 Show runtime context
+        run: |
+         echo "📦 Repository: ${{ github.repository }}"
+         echo "🌿 Branch: ${{ github.ref }}"
