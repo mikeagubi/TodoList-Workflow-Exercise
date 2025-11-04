@@ -28,4 +28,5 @@ jobs:
           dotnet-version: '9.0.x'
 
       - name: Build projct
+        working-directory: MyTodos
         run: dotnet build
