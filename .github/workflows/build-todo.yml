@@ -14,3 +14,18 @@ jobs:
         run: |
          echo "📦 Repository: ${{ github.repository }}"
          echo "🌿 Branch: ${{ github.ref }}"
+
+  build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5.0.0
+
+      - name: Install .NET 9
+        uses: actions/setup-dotnet@v5.0.0
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build projct
+        run: dotnet build
