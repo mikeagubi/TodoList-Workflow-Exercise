@@ -1,8 +1,16 @@
 name: Todo Build Workflow
 on:
   push:
+    branches:
+      - main
     paths:
       - '**/*.cs'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.cs'
+  workflow_dispatch:
 
 jobs:
   Print-Info:
