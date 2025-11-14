@@ -1,0 +1,23 @@
+name: Manual .Net build EXAMPLE
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-project:
+    runs-on: ubunto-latest
+
+    
+    steps:
+      - name: Chechout code
+        uses: actions/checkout@v5.0.0
+
+      - name: Install .Net 9
+        uses: actions/setup-dotnet@v5.0.0
+        with:
+          dotnet-version: '9.0.x'
+      - name: Build project
+        run: dotnet build tex sss/sss/sss.App.csproj
+
+      - name: Run coce
+        run: dotnet run --project cleancode/devops.csproj
