@@ -19,5 +19,5 @@ jobs:
       - name: Build project
         run: dotnet build tex sss/sss/sss.App.csproj
 
-      - name: Run coce
+      - name: Run code
         run: dotnet run --project cleancode/devops.csproj
