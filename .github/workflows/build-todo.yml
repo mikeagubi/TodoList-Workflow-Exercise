@@ -22,8 +22,8 @@ jobs:
 
       - name: 📃 Show runtime context
         run: |
-         echo "📦 Repository: ${{ github.repository }}"
-         echo "🌿 Branch: ${{ github.ref }}"
+          echo "📦 Repository: ${{ github.repository }}"
+          echo "🌿 Branch: ${{ github.ref }}"
 
   build-project:
     runs-on: ubuntu-latest
@@ -37,6 +37,9 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
+      - name: Build project
+        working-directory: MyTodos
+        run: dotnet build
       - name: Build projct
         working-directory: MyTodos
         run: dotnet build
